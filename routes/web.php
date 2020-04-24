@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+##Recipe CRUD
+Route::get('recipes', 'RecipesController@index');
+Route::get('recipes/{id}', 'RecipesController@read');
+Route::post('recipes', 'RecipesController@create');
+Route::put('recipes/{id}', 'RecipesController@update');
+Route::delete('recipes/{id}', 'RecipesController@delete');
