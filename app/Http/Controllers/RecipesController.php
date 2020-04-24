@@ -12,7 +12,9 @@ class RecipesController extends Controller
     }
     public function index()
     {
-        return view('recipes.index');
+        $recipes = new \App\Recipes();
+
+        return view('recipes.index', ['recipes'=>$recipes->simplePaginate('10')]);
     }
     public function read(Request $req)
     {
