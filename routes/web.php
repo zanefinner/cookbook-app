@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+##Admins
+Route::get('users', 'UserController@index');
+Route::get('users/register', function(){
+    return view('user.register');
+});
+Route::post('users/register', 'UserController@create');
+Route::get('users/{id}', 'UserController@read');
+Route::put('users/{id}', 'UserController@update');
+Route::delete('users/{id}', 'UserController@delete');
+
 ##Recipe CRUD
 Route::get('recipes', 'RecipesController@index');
 Route::get('recipes/{id}', 'RecipesController@read');
