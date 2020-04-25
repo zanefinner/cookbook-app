@@ -1,0 +1,20 @@
+.footer{
+    padding: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;    
+}
+.jumbotron{
+    margin-top: 44px;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 44px;
+    width: 100%;
+    line-height: 44px;
+    background-color: rgb(40,40,40);
+    color: white;
+    text-align: center;
+}
