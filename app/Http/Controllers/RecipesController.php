@@ -30,8 +30,14 @@ class RecipesController extends Controller
     {
         $data = new \App\Recipes;
         $recipe = $data->where('id', '=', $id)->first();//->get();
-
-        return view('recipes.read', ['data'=>$recipe]);
+        if(isset($recipe->id))
+        {
+            return view('recipes.read', ['data'=>$recipe]);
+        }
+        else
+        {
+            return view('recipes.error', ['error'=>'Recipe does not exist!']);
+        }
     }
     public function update()
     {
