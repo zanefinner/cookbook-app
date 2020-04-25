@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use \App;
 class UserController extends Controller
 {
     public function index()
@@ -12,7 +13,13 @@ class UserController extends Controller
     }
     public function create(Request $req)
     {
-        //create
+        $c = new Recipes;
+        $c->store(
+            $req->input('name'),
+            json_encode ($req->input ('ingredients') ),
+            $req->input('description')
+
+        );
         redirect('/users/signin');
     }
     public function read($id)

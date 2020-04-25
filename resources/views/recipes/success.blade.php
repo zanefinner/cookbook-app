@@ -1,0 +1,1 @@
+<a href="/recipes/{{$data}}">Here is your recipe</a>
